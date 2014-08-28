@@ -9,6 +9,10 @@ class Picture < ActiveRecord::Base
   #   where("created_at < ?", time)
   # end
   def self.created_before(time)
-    where("created_at < ?", time) 
+    where("created_at < ?", time)
+  end
+
+  def self.created_after(time)
+    where("created_at > ?", time)
   end
 end

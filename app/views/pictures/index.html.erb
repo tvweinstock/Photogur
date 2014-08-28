@@ -15,3 +15,10 @@
   <li><%= picture.title %></li>
   <% end %>
 </ul>
+
+
+<h1>Archived Pictures</h1>
+<%= Picture.created_before(1.month.ago).each do |picture| %>
+<%= link_to image_tag(picture.url), picture %>
+
+<% end %>
